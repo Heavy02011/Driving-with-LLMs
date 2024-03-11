@@ -73,8 +73,8 @@ class TrainerWithGeneration(transformers.Seq2SeqTrainer):
         # Log the predictions
         if wandb.run is None:
             self.log({"i": None})  # dummy log to initialize wandb
-        images = log_txt_as_img((512, 512), [all_pred[0], all_label[0]])
-        wandb.log({"val_logits": wandb.Image(np.concatenate(images, axis=1))})
+        #images = log_txt_as_img((512, 512), [all_pred[0], all_label[0]])
+        #wandb.log({"val_logits": wandb.Image(np.concatenate(images, axis=1))})
         wandb.log(
             {
                 "val_results": wandb.Table(
